@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<title>साखरपुडा आमंत्रण</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Tiro Devanagari Marathi', serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:radial-gradient(circle,#0f2027,#203a43,#2c5364);
+color:white;
+overflow:hidden;
+}
+
+/* NEW FLOATING LIGHT ANIMATION */
+
+.particle{
+position:absolute;
+width:8px;
+height:8px;
+background:white;
+border-radius:50%;
+opacity:0.7;
+animation:move 10s linear infinite;
+}
+
+@keyframes move{
+0%{
+transform:translateY(100vh) scale(0.5);
+opacity:0;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-10vh) scale(1.2);
+opacity:0;
+}
+}
+
+/* CARD DESIGN */
+
+.card{
+width:420px;
+padding:45px;
+text-align:center;
+border-radius:20px;
+
+background:rgba(0,0,0,0.6);
+
+border:2px solid gold;
+
+box-shadow:0 0 30px rgba(255,215,0,0.6);
+
+animation:zoom 1.2s ease;
+}
+
+@keyframes zoom{
+from{
+opacity:0;
+transform:scale(0.7);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+h1{
+color:gold;
+font-size:34px;
+}
+
+.names{
+font-size:30px;
+color:#ffd700;
+font-weight:bold;
+margin:20px 0;
+}
+
+input{
+padding:12px;
+width:230px;
+border-radius:8px;
+border:none;
+font-size:16px;
+}
+
+button{
+margin-top:15px;
+padding:12px 28px;
+border:none;
+border-radius:30px;
+font-size:16px;
+background:gold;
+color:black;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+#invitation{
+display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- floating particles -->
+<div class="particle" style="left:10%"></div>
+<div class="particle" style="left:20%"></div>
+<div class="particle" style="left:35%"></div>
+<div class="particle" style="left:50%"></div>
+<div class="particle" style="left:65%"></div>
+<div class="particle" style="left:80%"></div>
+<div class="particle" style="left:90%"></div>
+
+<div class="card" id="inputBox">
+
+<h2>आपले नाव टाका</h2>
+
+<input type="text" id="name" placeholder="तुमचे नाव">
+
+<br>
+
+<button onclick="showInvite()">आमंत्रण पहा</button>
+
+</div>
+
+
+<div class="card" id="invitation">
+
+<h1>💍 साखरपुडा समारंभ 💍</h1>
+
+<p id="welcome"></p>
+
+<p>आपणांस कळविण्यात आनंद होत आहे की</p>
+
+<div class="names">
+मोहन ❤️ नेहा
+</div>
+
+<p>
+📅 तारीख: 21 मार्च 2026 <br><br>
+⏰ वेळ: दु. 12:00 <br><br>
+📍 स्थळ: रमाई आंबेडकर नगर,क सांगाव,कागल 
+</p>
+
+<p>आपली उपस्थिती आम्हाला आनंद देईल.</p>
+
+</div>
+
+<script>
+
+function showInvite(){
+
+let name=document.getElementById("name").value;
+
+if(name===""){
+alert("कृपया आपले नाव टाका");
+}
+else{
+
+document.getElementById("inputBox").style.display="none";
+document.getElementById("invitation").style.display="block";
+
+document.getElementById("welcome").innerHTML =
+"✨ "+name+" यांना सप्रेम आमंत्रण ✨";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
